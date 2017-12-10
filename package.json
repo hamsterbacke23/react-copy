@@ -7,6 +7,10 @@
   "peerDependencies": {
     "react": "^16.2.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hamsterbacke23/react-copy"
+  },
   "dependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
