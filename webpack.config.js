@@ -15,8 +15,13 @@ module.exports = {
         exclude: /(node_modules|bower_components|build)/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['env'],
+          query: {
+            plugins: [
+              'transform-class-properties',
+            ],
+            presets: [
+              'env',
+            ],
           },
         },
       },

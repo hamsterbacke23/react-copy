@@ -1,31 +1,50 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import defaultStyle from './defaultStyle';
 
-class Copy extends Component {
+class Copy extends PureComponent {
+  static propTypes = {
+    textToBeCopied: PropTypes.string.isRequired,
+    children: PropTypes.element.isRequired,
+    onCopy: PropTypes.func,
+    style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  }
+
+  static defaultProps = {
+    onCopy: undefined,
+    style: null,
+  }
+
+  static defaultStyle = {
+    wordWrap: 'break-word',
+    width: '70%',
+    display: 'inline-block',
+    fontSize: '0.8em',
+    opacity: 0.6,
+  }
+
   /**
    * Selects a text within a dom element
-   * @param {object} domElement
    */
-  static selectTextFromElement(domElement) {
+  selectTextFromElement() {
     if (window.getSelection && document.createRange) {
       const selection = window.getSelection();
       const range = document.createRange();
-      range.selectNodeContents(domElement);
+      range.selectNodeContents(this.urlSpan);
       selection.removeAllRanges();
       selection.addRange(range);
     } else if (document.selection && document.body.createTextRange) {
       const range = document.body.createTextRange();
-      range.moveToElementText(domElement);
+      range.moveToElementText(this.urlSpan);
       range.select();
     }
   }
 
   /**
    * Try to copy the text within a dom element
-   * @param {object} domElement
    */
-  copy(domElement) {
-    this.selectTextFromElement(domElement);
+  copy() {
+    this.selectTextFromElement();
     let success;
     let error;
 
@@ -47,7 +66,7 @@ class Copy extends Component {
 
   render() {
     const child = React.Children.only(this.props.children);
-    const copyMethod = this.copy.bind(this, this.urlSpan);
+    const copyMethod = this.copy.bind(this);
     const buttonElem = React.cloneElement(child, { ...child.props, onClick: copyMethod });
 
     return (
@@ -65,16 +84,5 @@ class Copy extends Component {
   }
 }
 
-Copy.propTypes = {
-  textToBeCopied: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
-  onCopy: PropTypes.func,
-  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-};
-
-Copy.defaultProps = {
-  onCopy: undefined,
-  style: {},
-};
 
 export default Copy;
