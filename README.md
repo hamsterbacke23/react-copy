@@ -23,4 +23,6 @@ import Copy from 'react-copy';
 For a real world use-case checkout https://github.com/hamsterbacke23/movierater
 
 ### Alternatives to this component
-Also check out https://github.com/nkbt/react-copy-to-clipboard
+Also check out 
+- https://github.com/nkbt/react-copy-to-clipboard
+- https://github.com/tableflip/react-copy-text
