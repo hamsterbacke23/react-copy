@@ -4,6 +4,7 @@ Works by selecting a string given as a prop and then copies it. Almost no depend
 ### Usage
 ```
 npm install react-copy --save
+// OR
 yarn add react-copy
 ```
 ```
