@@ -1,27 +1,26 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import defaultStyle from './defaultStyle';
 
 class Copy extends PureComponent {
   static propTypes = {
     textToBeCopied: PropTypes.string.isRequired,
     children: PropTypes.element.isRequired,
     onCopy: PropTypes.func,
-    style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  }
+    style: PropTypes.object
+  };
 
   static defaultProps = {
     onCopy: undefined,
-    style: null,
-  }
+    style: null
+  };
 
-  static defaultStyle = {
+  getDefaultStyle = () => ({
     wordWrap: 'break-word',
     width: '70%',
     display: 'inline-block',
     fontSize: '0.8em',
-    opacity: 0.6,
-  }
+    opacity: 0.6
+  });
 
   /**
    * Selects a text within a dom element
@@ -59,7 +58,7 @@ class Copy extends PureComponent {
     if (this.props.onCopy) {
       this.props.onCopy({
         success,
-        error,
+        error
       });
     }
   }
@@ -67,14 +66,18 @@ class Copy extends PureComponent {
   render() {
     const child = React.Children.only(this.props.children);
     const copyMethod = this.copy.bind(this);
-    const buttonElem = React.cloneElement(child, { ...child.props, onClick: copyMethod });
-
+    const buttonElem = React.cloneElement(child, {
+      ...child.props,
+      onClick: copyMethod
+    });
     return (
-      <div>
+      <div className="copy">
         <span
-          className="Copy"
-          ref={(span) => { this.urlSpan = span; }}
-          style={this.props.style ? this.props.style : defaultStyle}
+          className="copy-content"
+          ref={span => {
+            this.urlSpan = span;
+          }}
+          style={this.props.style ? this.props.style : this.getDefaultStyle()}
         >
           {this.props.textToBeCopied}
         </span>
@@ -83,6 +86,5 @@ class Copy extends PureComponent {
     );
   }
 }
-
 
 export default Copy;

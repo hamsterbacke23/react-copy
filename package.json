@@ -1,6 +1,6 @@
 {
   "name": "react-copy",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Component for copy to clipboard",
   "main": "build/index.js",
   "license": "MIT",
@@ -12,21 +12,32 @@
     "url": "https://github.com/hamsterbacke23/react-copy"
   },
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react": "^16.2.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
     "build": "webpack",
+    "precommit": "lint-staged",
     "lint": "npm run lint:js",
     "lint:eslint": "eslint --ignore-path .gitignore",
     "lint:js": "npm run lint:eslint -- . "
   },
   "author": {
     "name": "Tobias Schmidt",
-    "email": "jajaklar@web.de"
+    "email": "tobias.schmidt@seitenbau.com"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
   },
   "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.1",
+    "prettier": "^1.10.2",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-eslint": "^8.0.3",
@@ -41,7 +52,6 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.5.1",
-    "prop-types": "^15.6.0",
     "webpack": "^3.9.1"
   }
 }
