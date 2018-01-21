@@ -37,10 +37,6 @@ Type: `PropTypes.element.isRequired`
 
 Exactly one child is required as a click handler for copying, e.g. a button
 
-#### `children`
-
-Type: `PropTypes.element.isRequired`
-
 #### `onCopy`
 
 Type: `PropTypes.func`
