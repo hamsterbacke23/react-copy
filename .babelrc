@@ -1,11 +1,30 @@
 {
-    "presets": [
+  "presets": [
+    [
       "env",
-      "react"
+      {
+        "modules": false
+      }
     ],
-    "plugins": [
-        "transform-class-properties",
-        "transform-object-rest-spread",
-        "transform-react-jsx"
-    ]
+    "react",
+    "stage-0"
+  ],
+  "env": {
+    "production": {
+      "only": [
+        "app"
+      ],
+      "plugins": [
+        "transform-react-remove-prop-types",
+        "transform-react-constant-elements",
+        "transform-react-inline-elements"
+      ]
+    },
+    "test": {
+      "plugins": [
+        "transform-es2015-modules-commonjs",
+        "dynamic-import-node"
+      ]
+    }
+  }
 }
