@@ -8,7 +8,3 @@ script:
   - npm run test
   - npm run build
 
-cache:
-  yarn: true
-  directories:
-    - node_modules
