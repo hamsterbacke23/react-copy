@@ -20,7 +20,6 @@ module.exports = {
               'transform-class-properties',
             ],
             presets: [
-              'es2015',
               'env',
               'react',
             ],
