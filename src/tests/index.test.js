@@ -1,7 +1,6 @@
 import Copy from '../index.js';
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 const textToBeCopied = 'blablub!@#$$#$@!';
 
