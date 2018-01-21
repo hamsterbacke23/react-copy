@@ -4,7 +4,11 @@ Works by selecting a string given as a prop and then copies it. Almost no depend
 ### Usage
 ```
 npm install react-copy --save
-// OR
+```
+
+or
+
+```
 yarn add react-copy
 ```
 ```
@@ -19,6 +23,37 @@ import Copy from 'react-copy';
 </Copy>
 ```
 
+## Properties
+
+#### `textToBeCopied`
+
+Type: `PropTypes.string.isRequired`
+
+The text that should be copied on button click
+
+#### `children`
+
+Type: `PropTypes.element.isRequired`
+
+Exactly one child is required as a click handler for copying, e.g. a button
+
+#### `children`
+
+Type: `PropTypes.element.isRequired`
+
+#### `onCopy`
+
+Type: `PropTypes.func`
+
+A callback function called when copy function is called
+
+#### `style`
+
+Type: `PropTypes.object`
+
+Optional style object
+
+
 ### Example
 For a real world use-case checkout https://github.com/hamsterbacke23/movierater
 
@@ -26,3 +61,4 @@ For a real world use-case checkout https://github.com/hamsterbacke23/movierater
 Also check out
 - https://github.com/nkbt/react-copy-to-clipboard
 - https://github.com/tableflip/react-copy-text
+
