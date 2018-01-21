@@ -51,7 +51,7 @@ Optional style object
 
 
 ### Example
-For a real world use-case checkout https://github.com/hamsterbacke23/movierater
+For a real world use-case checkout a [demo](https://hamsterbacke23.github.io/movierater/#Taxi%20Driver)  (https://github.com/hamsterbacke23/movierater)
 
 ### Alternatives to this component
 Also check out
