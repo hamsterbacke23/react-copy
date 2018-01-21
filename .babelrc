@@ -12,7 +12,7 @@
   "env": {
     "production": {
       "only": [
-        "app"
+        "src"
       ],
       "plugins": [
         "transform-react-remove-prop-types",
