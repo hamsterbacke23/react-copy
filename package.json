@@ -55,15 +55,15 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.13.0",
     "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-babel": "^5.0.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.5.1",
     "husky": "^0.14.3",
     "jest": "^22.1.4",
-    "lint-staged": "^6.0.1",
+    "lint-staged": "^7.0.4",
     "prettier": "^1.10.2",
     "react-dom": "^16.2.0",
-    "webpack": "^3.9.1"
+    "webpack": "^4.6.0"
   }
 }
