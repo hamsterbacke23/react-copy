@@ -1,4 +1,4 @@
-## Simplistic copy-to-clipboard component [![Build Status](https://travis-ci.org/hamsterbacke23/react-copy.svg?branch=master)](https://travis-ci.org/hamsterbacke23/react-copy)
+## Simplistic copy-to-clipboard component [![Build Status](https://travis-ci.org/hamsterbacke23/react-copy.svg?branch=master)](https://travis-ci.org/hamsterbacke23/react-copy) [![Dependencies](https://david-dm.org/hamsterbacke23/react-copy.svg)](https://david-dm.org/hamsterbacke23/react-copy)
 Works by selecting a string given as a prop and then copies it. Almost no dependencies.
 ### Usage
 ```
