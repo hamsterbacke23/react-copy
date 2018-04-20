@@ -5,8 +5,7 @@ class Copy extends PureComponent {
   static propTypes = {
     textToBeCopied: PropTypes.string.isRequired,
     children: PropTypes.element.isRequired,
-    onCopy: PropTypes.func,
-    style: PropTypes.object
+    onCopy: PropTypes.func
   };
 
   static defaultProps = {
@@ -55,7 +54,7 @@ class Copy extends PureComponent {
   }
 
   render() {
-    const { children, ...otherProps } = this.props;
+    const { textToBeCopied, onCopy, children, ...otherProps } = this.props;
     const child = React.Children.only(children);
     const copyMethod = this.copy.bind(this);
     const buttonElem = React.cloneElement(child, {
@@ -64,16 +63,17 @@ class Copy extends PureComponent {
     });
 
     return (
-      <div {...otherProps}>
+      <React.Fragment>
         <span
+          {...otherProps}
           ref={span => {
             this.urlSpan = span;
           }}
         >
-          {this.props.textToBeCopied}
+          {textToBeCopied}
         </span>
         {buttonElem}
-      </div>
+      </React.Fragment>
     );
   }
 }
