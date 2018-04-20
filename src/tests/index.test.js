@@ -16,7 +16,7 @@ test('Component contains given text', () => {
 
 test('Component copies text to clipboard', () => {
   document.__setSelection(textToBeCopied); // fake selection
-  component.instance().copy();
+  component.find('button').simulate('click');
   expect(component.contains(textToBeCopied)).toEqual(true);
   expect(document.__getClipboard()).toEqual(textToBeCopied);
 });
