@@ -4,9 +4,6 @@
   "description": "Component for copy to clipboard",
   "main": "build/index.js",
   "license": "MIT",
-  "peerDependencies": {
-    "react": "^16.2.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/hamsterbacke23/react-copy"
@@ -17,28 +14,24 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "webpack --watch",
-    "build": "webpack",
+    "start": "webpack --mode development --watch",
+    "build": "webpack --mode production",
     "precommit": "lint-staged",
     "lint": "npm run lint:js",
     "lint:eslint": "eslint --ignore-path .gitignore",
     "lint:js": "npm run lint:eslint -- . "
   },
   "jest": {
-    "setupFiles": [
-      "./src/tests/setupFiles.js"
-    ],
+    "setupFiles": ["./src/tests/setupFiles.js"],
     "setupTestFrameworkScriptFile": "./src/tests/setupFrameworks.js"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
+    "src/**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
   },
-  "dependencies": {
+  "peerDependencies": {
     "prop-types": "^15.6.0",
-    "react": "^16.2.0"
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -63,8 +56,10 @@
     "jest": "^22.1.4",
     "lint-staged": "^7.0.4",
     "prettier": "^1.10.2",
-    "react-dom": "^16.2.0",
     "webpack": "^4.6.0",
-    "webpack-cli": "^2.0.14"
+    "webpack-cli": "^2.0.14",
+    "prop-types": "^15.6.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   }
 }

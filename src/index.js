@@ -10,17 +10,8 @@ class Copy extends PureComponent {
   };
 
   static defaultProps = {
-    onCopy: undefined,
-    style: null
+    onCopy: undefined
   };
-
-  getDefaultStyle = () => ({
-    wordWrap: 'break-word',
-    width: '70%',
-    display: 'inline-block',
-    fontSize: '0.8em',
-    opacity: 0.6
-  });
 
   /**
    * Selects a text within a dom element
@@ -64,20 +55,20 @@ class Copy extends PureComponent {
   }
 
   render() {
-    const child = React.Children.only(this.props.children);
+    const { children, ...otherProps } = this.props;
+    const child = React.Children.only(children);
     const copyMethod = this.copy.bind(this);
     const buttonElem = React.cloneElement(child, {
       ...child.props,
       onClick: copyMethod
     });
+
     return (
-      <div className="copy">
+      <div {...otherProps}>
         <span
-          className="copy-content"
           ref={span => {
             this.urlSpan = span;
           }}
-          style={this.props.style ? this.props.style : this.getDefaultStyle()}
         >
           {this.props.textToBeCopied}
         </span>
