@@ -33,8 +33,10 @@
       "git add"
     ]
   },
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
   "peerDependencies": {
-    "prop-types": "^15.6.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },
