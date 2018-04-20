@@ -1,6 +1,6 @@
 {
   "name": "react-copy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Component for copy to clipboard",
   "main": "build/index.js",
   "license": "MIT",
