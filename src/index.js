@@ -62,18 +62,19 @@ class Copy extends PureComponent {
       onClick: copyMethod
     });
 
-    return;
-    [
-      <span
-        {...otherProps}
-        ref={span => {
-          this.urlSpan = span;
-        }}
-      >
-        {textToBeCopied}
-      </span>,
-      { buttonElem }
-    ];
+    return (
+      <React.Fragment>
+        <span
+          {...otherProps}
+          ref={span => {
+            this.urlSpan = span;
+          }}
+        >
+          {textToBeCopied}
+        </span>
+        {buttonElem}
+      </React.Fragment>
+    );
   }
 }
 
