@@ -1,6 +1,6 @@
 {
   "name": "react-copy",
-  "version": "0.2.4",
+  "version": "1.0.0",
   "description": "Component for copy to clipboard",
   "main": "build/index.js",
   "license": "MIT",
@@ -22,11 +22,16 @@
     "lint:js": "npm run lint:eslint -- . "
   },
   "jest": {
-    "setupFiles": ["./src/tests/setupFiles.js"],
+    "setupFiles": [
+      "./src/tests/setupFiles.js"
+    ],
     "setupTestFrameworkScriptFile": "./src/tests/setupFrameworks.js"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
