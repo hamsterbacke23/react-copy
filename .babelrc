@@ -7,13 +7,11 @@
       }
     ],
     "react",
-    "stage-0"
+    "stage-2"
   ],
   "env": {
     "production": {
-      "only": [
-        "src"
-      ],
+      "only": ["src"],
       "plugins": [
         "transform-react-remove-prop-types",
         "transform-react-constant-elements",
@@ -21,9 +19,7 @@
       ]
     },
     "test": {
-      "plugins": [
-        "transform-es2015-modules-commonjs"
-      ]
+      "plugins": ["transform-es2015-modules-commonjs"]
     }
   }
 }
