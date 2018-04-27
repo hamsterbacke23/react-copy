@@ -11,7 +11,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|build)/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           query: {
@@ -22,12 +22,12 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    alias: {
-      react: path.resolve(__dirname, './node_modules/react'),
-      'react-dom': path.resolve(__dirname, './node_modules/react-dom')
-    }
-  },
+  // resolve: {
+  //   alias: {
+  //     react: path.resolve(__dirname, './node_modules/react'),
+  //     'react-dom': path.resolve(__dirname, './node_modules/react-dom')
+  //   }
+  // },
   externals: {
     react: {
       commonjs: 'react',
