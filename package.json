@@ -63,7 +63,7 @@
     "jest": "^22.1.4",
     "lint-staged": "^7.0.4",
     "prettier": "^1.10.2",
-    "webpack": "^4.6.0",
+    "webpack": "^4.28.4",
     "webpack-cli": "^2.0.14",
     "prop-types": "^15.6.0",
     "react": "^16.3.2",
