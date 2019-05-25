@@ -25,7 +25,8 @@
     "setupFiles": [
       "./src/tests/setupFiles.js"
     ],
-    "setupTestFrameworkScriptFile": "./src/tests/setupFrameworks.js"
+    "setupTestFrameworkScriptFile": "./src/tests/setupFrameworks.js",
+    "testURL": "http://localhost/"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
